@@ -1,0 +1,41 @@
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(4,2,10,.75);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s;z-index:10;padding:16px}
+.modal.show{opacity:1;pointer-events:auto}
+.sheet,.chat{background:rgba(16,11,30,.96);border:1.5px solid var(--c);border-radius:16px;animation:pop .3s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 0 36px color-mix(in srgb,var(--c) 55%,transparent)}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.95)}to{opacity:1;transform:none}}
+.sheet{width:min(560px,100%);padding:26px;text-align:center}
+.sheet .big{height:200px;display:grid;place-items:center}
+.sheet h2{color:var(--c);font-size:34px;margin:8px 0 6px}
+.sheet p{color:var(--mute);font-size:18px;line-height:1.4;margin-bottom:16px}
+.tiers{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+.tiers button{font:inherit;font-weight:600;padding:7px 14px;border-radius:6px;border:1.5px solid var(--c);background:transparent;color:var(--c);cursor:pointer}
+.tiers button.on{background:var(--c);color:#07050f}
+.close{font:inherit;font-weight:700;padding:8px 26px;border-radius:6px;border:0;background:#fff;color:#07050f;cursor:pointer}
+.chat{width:min(540px,100%);height:min(680px,92vh);display:flex;flex-direction:column;overflow:hidden}
+.chead{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid color-mix(in srgb,var(--c) 40%,transparent);font-size:20px}
+.chead b{color:var(--c)}
+.dot{width:10px;height:10px;border-radius:50%;background:#46ff8b;box-shadow:0 0 10px #46ff8b}
+.x{margin-left:auto;background:none;border:0;color:var(--text);font-size:20px;cursor:pointer}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:82%;padding:10px 14px;border-radius:14px;line-height:1.35;animation:swap .25s ease}
+.msg.bot{align-self:flex-start;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-bottom-left-radius:4px}
+.msg.me{align-self:flex-end;background:var(--c);color:#07050f;font-weight:600;border-bottom-right-radius:4px}
+.msg.wide{max-width:100%;width:100%;padding:8px}
+.typing{display:flex;gap:5px;padding:14px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--c);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.vid{display:block;width:100%;aspect-ratio:16/9;border-radius:10px;background:#000;border:1.5px solid var(--c)}
+.vid.fake{position:relative;display:grid;place-items:center;overflow:hidden;padding:14px;
+  background:radial-gradient(circle,color-mix(in srgb,var(--c) 30%,#07050f),#07050f 75%)}
+.vid.fake small{position:absolute;bottom:6px;left:0;right:0;text-align:center;color:var(--mute);font-size:13px}
+.scan{position:absolute;inset:0;background:linear-gradient(transparent 40%,color-mix(in srgb,var(--c) 45%,transparent) 50%,transparent 60%);animation:scan 2.2s linear infinite}
+@keyframes scan{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
+.chips{display:flex;gap:8px;padding:0 16px 10px}
+.chips button{font:inherit;font-weight:600;padding:5px 16px;border-radius:20px;cursor:pointer;background:transparent;color:var(--c);border:1.5px solid color-mix(in srgb,var(--c) 60%,transparent)}
+.chips button:hover{background:color-mix(in srgb,var(--c) 20%,transparent)}
+.inputbar{display:flex;gap:8px;padding:12px 16px;border-top:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.inputbar input{flex:1;font:inherit;padding:10px 12px;border-radius:8px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);color:var(--text);outline:none}
+.inputbar input:focus{border-color:var(--c);box-shadow:0 0 10px color-mix(in srgb,var(--c) 50%,transparent)}
+.inputbar button{font:inherit;font-weight:700;padding:0 20px;border-radius:8px;border:0;background:var(--c);color:#07050f;cursor:pointer}

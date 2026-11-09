@@ -1,0 +1,15 @@
+:root{--panel:rgba(18,13,32,.82);--text:#eef0ff;--mute:#9a97b5}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{background:#06040d;font-family:Rajdhani,system-ui,sans-serif;font-size:18px;color:var(--text);overflow-x:hidden}
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 4vw 60px}
+h1{font-size:clamp(40px,5vw,64px);font-weight:700;letter-spacing:6px;color:#fff;margin-bottom:150px;
+  text-shadow:0 0 8px #1ff2ff,0 0 24px #c06bff,0 0 56px #ff3d9a}
+.row{width:100%;display:flex;align-items:center;justify-content:center;gap:34px;min-height:480px}
+@media (max-width:1000px){
+  h1{margin-bottom:60px}
+  .row{flex-direction:column;gap:120px;padding-top:60px}
+  .card,.card.dim{flex:none;width:min(420px,100%);transform:none;opacity:1}
+  .card.open{width:min(460px,100%)}
+}
+@media (prefers-reduced-motion:reduce){*,.bg,.bg::after{transition:none!important;animation:none!important}}

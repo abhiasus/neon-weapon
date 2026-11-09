@@ -1,0 +1,15 @@
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
+  background:
+   radial-gradient(60vmax 45vmax at 10% 15%,rgba(31,242,255,.24),transparent 60%),
+   radial-gradient(55vmax 45vmax at 90% 20%,rgba(180,92,255,.28),transparent 60%),
+   radial-gradient(70vmax 40vmax at 50% 108%,rgba(255,61,154,.34),transparent 60%),
+   radial-gradient(40vmax 30vmax at 92% 85%,rgba(255,165,31,.18),transparent 60%),
+   radial-gradient(35vmax 25vmax at 8% 88%,rgba(150,255,60,.12),transparent 60%),#06040d;
+  animation:hue 26s ease-in-out infinite alternate}
+.bg::after{content:"";position:absolute;left:-60%;right:-60%;bottom:0;height:58%;
+  background-image:linear-gradient(rgba(192,107,255,.45) 1px,transparent 1px),linear-gradient(90deg,rgba(31,242,255,.4) 1px,transparent 1px);
+  background-size:64px 64px;transform:perspective(520px) rotateX(64deg);transform-origin:bottom;
+  -webkit-mask-image:linear-gradient(to top,#000,transparent 88%);mask-image:linear-gradient(to top,#000,transparent 88%);
+  animation:grid 5s linear infinite}
+@keyframes grid{to{background-position:0 64px}}
+@keyframes hue{to{filter:hue-rotate(45deg)}}
